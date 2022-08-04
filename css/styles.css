@@ -1,0 +1,154 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --clr-light: #f1f1f1;
+    --clr-dark: #111;
+    --clr-accent: #ff9000;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 1.3125rem;
+    line-height: 1.5;
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 0 3em;
+    height: 80px;
+    margin-bottom: 1.5em;
+    /* background: red; */
+}
+
+.logo {
+    font-size: 1.7rem;
+}
+
+@media (max-width: 600px) {
+    .header {
+        padding: 0 1em;
+        height: 60px;
+    }
+    .logo {
+        font-size: 1rem;
+    }
+}
+
+span {
+    background-color: var(--clr-accent);
+    color: var(--clr-dark);
+    border-radius: 10px;
+    padding: .25em;
+}
+
+.section__title,
+#gwa {
+    text-align: center;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    list-style: 1;
+}
+
+.container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    /* background-color: green; */
+}
+
+.d-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .7em;
+}
+
+.err {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 1rem;
+    color: rgb(251, 73, 73);
+}
+
+.grades {
+    margin-top: .5em;
+}
+
+.grades input {
+    outline: none;
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    width: 30%;
+}
+
+.subject {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    outline: none;
+    padding: 5px;
+    border: none;
+}
+
+.row-subject {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+button {
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: var(--clr-accent);
+    cursor: pointer;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    margin-block: 1em;
+    gap: .5em;
+}
+
+.btn-group button {
+    border: none;
+    padding: .3rem .7rem;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+button:hover,
+button:focus {
+    background-color: var(--clr-light);
+    color: var(--clr-accent);
+}
+
+.grades div {
+    display: flex;
+    gap: .5em;
+    margin-bottom: .3em;
+}
+
+
+
+
+

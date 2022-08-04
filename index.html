@@ -4,9 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
     <title>GWA Calculator</title>
 </head>
 <body>
-    
+    <!-- Header -->
+    <header class="header">
+        <div>
+            <h3 class="logo">GWA <span>Calculator</span></h3>
+        </div>
+    </header>
+
+    <!--  main -->
+    <main>
+        <section class="calculator">
+            <div class="container d-flex">
+                <form id="form" method="post">
+                    <h1 class="section__title">GWA Calculator</h1>
+                    <div id="subject_err" class="err">aaa</div>
+                    <div class="row-subject">
+                        <input type="number" placeholder="Enter number of subjects" class="subject" id="subject_no">
+                        <button id="subject_button" type="button">Enter</button>
+                    </div>
+                    <div id="errMessage" class="err">
+
+                    </div>
+                    <div class="grades" id="grades_row">
+                        <div class="row">
+                            <input type="text" placeholder="Subject Code">
+                            <input class="grade" type="number" name="grade" placeholder="Enter grade" min="0" step="any">
+                            <input class="unit" type="number" name="unit" placeholder="Enter Units" min="0" step="any">
+                        </div>
+                    </div>
+                    <p id="gwa">bbb</p>
+                    <div class="btn-group" id="btn-group">
+                        <button id="add_row" type="button">Add Subject</button>
+                        <button id="submit" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="/js/script.js"></script>
 </body>
 </html>
