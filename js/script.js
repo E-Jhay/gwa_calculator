@@ -1,13 +1,15 @@
 let grades = document.querySelectorAll('.grade');
 let units = document.querySelectorAll('.unit');
 const errMessage = document.getElementById('errMessage');
-const form = document.getElementById('form');
+const form1 = document.getElementById('form1');
+const form2 = document.getElementById('form2');
 const gwa = document.getElementById('gwa');
 const subjectNumber = document.getElementById('subject_no');
 const subjectButton = document.getElementById('subject_button');
 const subjectErr = document.getElementById('subject_err');
 const gradesRow = document.getElementById('grades_row');
 const addRow = document.getElementById('add_row');
+const output = document.getElementById('output');
 
 const addRowElement = (count) => {
     for(let i = 0; i < count; i++){
@@ -34,9 +36,15 @@ const addRowElement = (count) => {
         unitInput.setAttribute('min', '0');
         unitInput.setAttribute('step', 'any');
 
+        const button = document.createElement('button');
+        button.innerText = 'X';
+        button.type = 'button';
+        button.setAttribute('onclick', 'removeField(this)');
+
         div.appendChild(subjectInput);
         div.appendChild(gradeInput);
         div.appendChild(unitInput);
+        div.appendChild(button);
 
         gradesRow.appendChild(div)
 
@@ -45,19 +53,27 @@ const addRowElement = (count) => {
     units = document.querySelectorAll('.unit');
 }
 
-subjectButton.addEventListener('click', e => {
+form1.addEventListener('submit', e => {
+    e.preventDefault();
     if (subjectNumber.value <= 0){
-        subjectErr.innerText = "Subject must be greater than 0";
+        return subjectErr.innerText = "Subject must be greater than 0";
     }
+    subjectErr.innerText = "";
     addRowElement(parseInt(subjectNumber.value)-1);
 });
 
 addRow.addEventListener('click', e => {
     addRowElement(1);
-    console.log(grades)
 })
 
-form.addEventListener('submit', (e) => {
+const removeField = e => {
+    e.parentNode.remove()
+    grades = document.querySelectorAll('.grade');
+    units = document.querySelectorAll('.unit');
+    console.log(e)
+}
+
+form2.addEventListener('submit', (e) => {
     e.preventDefault();
     let err;
 
@@ -88,10 +104,9 @@ form.addEventListener('submit', (e) => {
 
     let total = subTotal / unitTotal;
     if(total > 0){
-        gwa.innerText = 'Your GWA is: ' + total.toFixed(2);
+        gwa.innerText = total.toFixed(2);
         errMessage.innerText = "";
+        output.classList.remove('output')
     }
-    // console.log(total, subTotal, unitTotal)
-    // console.log(units.length, grades.length)
 });
 

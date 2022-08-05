@@ -19,29 +19,36 @@
     <main>
         <section class="calculator">
             <div class="container d-flex">
-                <form id="form" method="post">
-                    <h1 class="section__title">GWA Calculator</h1>
-                    <div id="subject_err" class="err">aaa</div>
-                    <div class="row-subject">
-                        <input type="number" placeholder="Enter number of subjects" class="subject" id="subject_no">
-                        <button id="subject_button" type="button">Enter</button>
-                    </div>
-                    <div id="errMessage" class="err">
-
-                    </div>
-                    <div class="grades" id="grades_row">
-                        <div class="row">
-                            <input type="text" placeholder="Subject Code">
-                            <input class="grade" type="number" name="grade" placeholder="Enter grade" min="0" step="any">
-                            <input class="unit" type="number" name="unit" placeholder="Enter Units" min="0" step="any">
+                <div class="box">
+                    <form action="" id="form1">
+                        <h1 class="section__title">GWA Calculator</h1>
+                        <div id="subject_err" class="err"></div>
+                        <div class="row-subject">
+                            <input type="number" placeholder="Add multiple Subject" class="subject" id="subject_no">
+                            <button id="subject_button" type="submit">Enter</button>
                         </div>
-                    </div>
-                    <p id="gwa">bbb</p>
-                    <div class="btn-group" id="btn-group">
-                        <button id="add_row" type="button">Add Subject</button>
-                        <button id="submit" type="submit">Submit</button>
-                    </div>
-                </form>
+                    </form>
+                    <form id="form2" method="post">
+                        <div id="errMessage" class="err">
+                        </div>
+                        <div class="grades" id="grades_row">
+                            <div class="row">
+                                <input type="text" placeholder="Subject Code">
+                                <input class="grade" type="number" name="grade" placeholder="Enter grade" min="0" step="any">
+                                <input class="unit" type="number" name="unit" placeholder="Enter Units" min="0" step="any">
+                                <button type="button" onclick="removeField(this)">X</button>
+                            </div>
+                        </div>
+                        <p class="output" id="output">Your GWA is: <span id="gwa"></span></p>
+                        <div class="btn-group" id="btn-group">
+                            <button id="add_row" type="button">Add Subject</button>
+                            <button id="reset" onclick="location.reload()" type="button">Reset</button>
+                        </div>
+                        <div class="btn-group">
+                            <button id="submit" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </section>
     </main>

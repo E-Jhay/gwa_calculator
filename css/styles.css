@@ -5,9 +5,12 @@
 }
 
 :root {
-    --clr-light: #f1f1f1;
+    --clr-light: #fff;
     --clr-dark: #111;
-    --clr-accent: #ff9000;
+    --clr-accent: rgb(77, 255, 255);
+
+    --bs: .25em .25em .75em rgba(0,0,0,.25),
+          .125em .125em .25em rgba(0,0,0,.15);
 }
 
 body {
@@ -15,8 +18,11 @@ body {
     padding: 0;
     font-size: 1.3125rem;
     line-height: 1.5;
-    background-color: var(--clr-dark);
-    color: var(--clr-light);
+    background-color: var(--clr-light);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: var(--clr-dark);
 }
 
 .header {
@@ -42,16 +48,16 @@ body {
     }
 }
 
-span {
+.logo span {
     background-color: var(--clr-accent);
     color: var(--clr-dark);
     border-radius: 10px;
     padding: .25em;
 }
 
-.section__title,
-#gwa {
+.section__title{
     text-align: center;
+    margin-bottom: .8em;
 }
 
 h1,
@@ -84,14 +90,47 @@ h3 {
     color: rgb(251, 73, 73);
 }
 
+.btn-group {
+    display: flex;
+    justify-content: center;
+    margin-block: 1em;
+    gap: .5em;
+}
+
+button {
+    font-weight: 600;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    line-height: 1;
+    font-size: .85rem;
+    background-color: var(--clr-accent);
+    cursor: pointer;
+}
+
+button:hover,
+button:focus {
+  box-shadow: var(--bs);
+  transform: translateY(-0.25em);
+}
+
+#subject_button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: 1px solid;
+    border-left: none;
+}
+
 .grades {
     margin-top: .5em;
 }
 
+input {
+    border: 1px solid var(--clr-dark);
+}
+
 .grades input {
-    outline: none;
     padding: 5px;
-    border: none;
     border-radius: 3px;
     width: 30%;
 }
@@ -101,7 +140,6 @@ h3 {
     border-top-left-radius: 5px;
     outline: none;
     padding: 5px;
-    border: none;
 }
 
 .row-subject {
@@ -110,45 +148,26 @@ h3 {
     margin-bottom: 1em;
 }
 
-button {
-    text-transform: uppercase;
-    font-weight: 600;
-    padding: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border: none;
-    outline: none;
-    background-color: var(--clr-accent);
-    cursor: pointer;
-}
-
-.btn-group {
-    display: flex;
-    justify-content: center;
-    margin-block: 1em;
-    gap: .5em;
-}
-
-.btn-group button {
-    border: none;
-    padding: .3rem .7rem;
-    font-size: 1rem;
-    border-radius: 5px;
-}
-
-button:hover,
-button:focus {
-    background-color: var(--clr-light);
-    color: var(--clr-accent);
-}
-
 .grades div {
     display: flex;
     gap: .5em;
     margin-bottom: .3em;
 }
 
+#gwa {
+    font-weight: 600;
+}
 
+.box{
+    background: var(--clr-light);
+    padding: 1em;
+    min-height: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: var(--bs);
+}
 
-
+.output {
+    display: none;
+}
 
