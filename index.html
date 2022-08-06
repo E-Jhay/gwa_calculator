@@ -9,22 +9,27 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
+    <header class="header" id="header">
         <div>
             <h3 class="logo">GWA <span>Calculator</span></h3>
         </div>
     </header>
 
     <!--  main -->
-    <main>
+    <main id="main">
         <section class="calculator">
             <div class="container d-flex">
                 <div class="box">
                     <form action="" id="form1">
                         <h1 class="section__title">GWA Calculator</h1>
+                        <div class="desciption">
+                            <p>
+                                Enter your subject (optional), grade and number of credit units and click “Calculate” to compute your General Weighted Average (GWA). You can add subjects by clicking “Add Subject”, or even add multiple subjects by entering the number on "add multiple subject" input.
+                            </p>
+                        </div>
                         <div id="subject_err" class="err"></div>
                         <div class="row-subject">
-                            <input type="number" placeholder="Add multiple Subject" class="subject" id="subject_no">
+                            <input type="number" placeholder="Add multiple Subject" class="subject_no" id="subject_no">
                             <button id="subject_button" type="submit">Enter</button>
                         </div>
                     </form>
@@ -33,22 +38,46 @@
                         </div>
                         <div class="grades" id="grades_row">
                             <div class="row">
-                                <input type="text" placeholder="Subject Code">
+                                <input type="text" class="subject" placeholder="Subject Code">
                                 <input class="grade" type="number" name="grade" placeholder="Enter grade" min="0" step="any">
                                 <input class="unit" type="number" name="unit" placeholder="Enter Units" min="0" step="any">
                                 <button type="button" onclick="removeField(this)">X</button>
                             </div>
                         </div>
-                        <p class="output" id="output">Your GWA is: <span id="gwa"></span></p>
+                        <div class="output" id="output">
+                            <p class="output__p">
+                                Your GWA is: <span id="gwa"></span>
+                                <br>
+                                Total number of Units: <span id="totalUnits"></span>
+                            </p>
+                            <button class="printButton" type="button" onclick="print()">Print</button>
+                        </div>
                         <div class="btn-group" id="btn-group">
                             <button id="add_row" type="button">Add Subject</button>
                             <button id="reset" onclick="location.reload()" type="button">Reset</button>
                         </div>
                         <div class="btn-group">
-                            <button id="submit" type="submit">Submit</button>
+                            <button id="submit" type="submit">Calculate</button>
                         </div>
                     </form>
                 </div>
+            </div>
+        </section>
+
+        <section class="to-be-print" id="to-be-print">
+            <h1>General Weighted Average</h1>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Grade</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                    </tbody>
+                </table>
             </div>
         </section>
     </main>
